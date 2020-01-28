@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SoleilGS.Breath
-{
+
 	public sealed class SingletonHolder : MonoBehaviour
 	{
 
@@ -45,4 +44,4 @@ namespace SoleilGS.Breath
 			}
 		}
 	}
-}
+

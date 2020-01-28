@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SoleilGS.Breath
-{
+
     public class QuadTreeRegion : MonoBehaviour
     {
         [HideInInspector]
@@ -168,4 +167,3 @@ namespace SoleilGS.Breath
     }
 
 
-}

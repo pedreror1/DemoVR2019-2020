@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-namespace SoleilGS.Breath
-{
+using Random = UnityEngine.Random;
+
 [Serializable]
     public class SMPlayerPawn:MonoBehaviour
     {
@@ -20,6 +20,7 @@ namespace SoleilGS.Breath
 
         private void Start()
         {
+            speed = Random.Range(0.01f, 0.14f);
             if (isInside)
                 target=  QuadTreeManager.Instance.Regions[RegionID].getRandomChild();
         }
@@ -29,8 +30,11 @@ namespace SoleilGS.Breath
             {
                 isInside = true;
                 RegionID = ID;
-                 if (isInside && collisions.Contains(target))
-                    target = QuadTreeManager.Instance.Regions[RegionID].getRandomChild();
+            if (isInside && collisions.Contains(target))
+            {
+                target = QuadTreeManager.Instance.Regions[RegionID].getRandomChild();
+                speed = Random.Range(0.01f, 0.34f);
+            }
             }
             else
             {
@@ -69,4 +73,4 @@ namespace SoleilGS.Breath
     }
 
 
-}
+  

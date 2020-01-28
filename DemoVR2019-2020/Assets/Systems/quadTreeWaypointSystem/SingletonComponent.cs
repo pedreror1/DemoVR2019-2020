@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 
-namespace SoleilGS.Breath
-{
 	public class SingletonComponent<T> : MonoBehaviour where T : MonoBehaviour
 	{
 		private static T _instance;
@@ -41,4 +39,4 @@ namespace SoleilGS.Breath
 			}
 		}
 	}
-}
+

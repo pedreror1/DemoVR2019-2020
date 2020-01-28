@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SoleilGS.Breath
-{
-	public static class GameObjectExtensions
+public static class GameObjectExtensions
 	{
 		public static T GetOrAddComponent<T>(this GameObject instance) where T : Component
 		{
@@ -26,4 +24,4 @@ namespace SoleilGS.Breath
 			return targetComponent;
 		}
 	}
-}
+

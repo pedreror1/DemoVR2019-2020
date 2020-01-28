@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-namespace SoleilGS.Breath
-{
+ 
     public class QuadTreeManager : SingletonComponent<QuadTreeManager>
     {
 
@@ -81,4 +80,4 @@ namespace SoleilGS.Breath
         
     }
 
-}
+ 
