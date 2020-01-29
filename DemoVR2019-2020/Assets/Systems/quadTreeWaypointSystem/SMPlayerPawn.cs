@@ -17,8 +17,17 @@ using Random = UnityEngine.Random;
         [HideInInspector] public int RegionID = 0;
 
 
+    private void OnEnable()
+    {
+        QuadTreeManager.Instance.addPawn(this);
+    }
+    private void OnDisable()
+    {
+        QuadTreeManager.Instance.removePawn(this);
+    }
 
-        private void Start()
+
+    private void Start()
         {
             speed = Random.Range(0.01f, 0.14f);
             if (isInside)
@@ -53,6 +62,7 @@ using Random = UnityEngine.Random;
                 }
             }
         }
+
         private void Update()
         {
 

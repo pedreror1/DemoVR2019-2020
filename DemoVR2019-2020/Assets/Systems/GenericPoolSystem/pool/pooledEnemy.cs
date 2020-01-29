@@ -2,8 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pooledEnemy : MonoBehaviour
+public class pooledEnemy : MonoBehaviour, IPooledObject
 {
+    private void OnEnable()
+    {
+        born();
+    }
+    public void born()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Interaction()
+    {
+        throw new System.NotImplementedException();
+    }
+
+
+    public void Dead()
+    {
+
+        EnemiesPool.Instance.returnToPool(this);
+
+    }
     public float lifeSpan = 3f;
     public float timeAlive = 0f;
     public float speed = 0.2f;
@@ -12,15 +33,8 @@ public class pooledEnemy : MonoBehaviour
     {
         
     }
-    private void OnEnable()
-    {
-        timeAlive = 0f;
-    }
-    public void Dead()
-    {
-        EnemiesPool.Instance.returnToPool(this);
-
-    }
+    
+    
     // Update is called once per frame
     void Update()
     {
@@ -32,4 +46,6 @@ public class pooledEnemy : MonoBehaviour
             Dead();
         }
     }
+
+   
 }

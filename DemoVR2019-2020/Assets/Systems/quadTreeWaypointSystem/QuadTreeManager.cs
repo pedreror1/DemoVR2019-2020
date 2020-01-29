@@ -6,7 +6,7 @@ using System;
     public class QuadTreeManager : SingletonComponent<QuadTreeManager>
     {
 
-        public SMPlayerPawn[] Pawns;
+        public List<SMPlayerPawn> Pawns= new List<SMPlayerPawn>();
         public List<QuadTreeRegion> Regions = new List<QuadTreeRegion>();
         [Range(0.0001f,0.0510f)]
         public float FadeSpeed;
@@ -53,7 +53,14 @@ using System;
         }
 
 
-
+        public void addPawn(SMPlayerPawn pawn)
+        {
+            Pawns.Add(pawn);
+        }
+        public void removePawn(SMPlayerPawn pawn)
+        {
+            Pawns.Remove(pawn);
+        }
 
         public void UpdateCollision(int regionID, bool isOnShadow, int pawnID, List<Transform> collisions = null)
         {
@@ -68,9 +75,9 @@ using System;
                 Regions.Add(transform.GetChild(i).GetComponent<QuadTreeRegion>());
                 Regions[i].id = i;
             }
-            Pawns = FindObjectsOfType<SMPlayerPawn>();
+       //     Pawns = FindObjectsOfType<SMPlayerPawn>();
            
-            for (int i = 0; i < Pawns.Length; i++)
+            for (int i = 0; i < Pawns.Count; i++)
             {
                 
                 Pawns[i].ID = i;

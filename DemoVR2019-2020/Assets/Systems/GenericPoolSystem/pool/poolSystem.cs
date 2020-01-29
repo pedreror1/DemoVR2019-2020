@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+ using UnityEngine;
 
 public abstract class poolSystem<T>:SingletonComponent<poolSystem<T>> where T: Component
 {
@@ -9,10 +9,10 @@ public abstract class poolSystem<T>:SingletonComponent<poolSystem<T>> where T: C
     private T prefab;
 
     private Queue<T> objects = new Queue<T>();
+
+
     
 
-
-   
     public T getFromPool()
     {
         if(objects.Count==0)
