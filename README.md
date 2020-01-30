@@ -45,7 +45,7 @@ Pool System Generator Custom Editor Actions to generate Pool System Classes on R
 
 
 Quad Tree Implementation For Custom Collision Detection
-<br/>	<img src="/Gifs/quadtree.gif?raw=true" width="200px">
+<br/>	<img src="/Gifs/quadtree.gif?raw=true" width="400px">
 
 
 Sword Slash Effect Run Time Generation of Mesh to create a more vivid Sword Slash Effect
