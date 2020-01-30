@@ -1,32 +1,32 @@
 # DemoVR2019-2020
  Unity VR Sample  2019-2020
 Sample Project With some Interesting Demos for VR using UNITY HDRP
-![Imgur Image](http://i.imgur.com/7Oelk0B)
+![Imgur Image](http://i.imgur.com/7Oelk0B.gif)
 
 
 
 Mesh Vertex Displacment Shader to give Animation to an static mesh
-![Imgur Image](https://imgur.com/DmRwepa)
+![Imgur Image](https://imgur.com/DmRwepa.gif)
 
 
 Scanlines and Distort Shader Using Vertex Displacment
-![Imgur Image](https://imgur.com/7Oelk0B)
+![Imgur Image](https://imgur.com/7Oelk0B.gif)
 
 Inverse Kinematics System to control a Virtual Character with full body Interactions
-![Imgur Image](https://imgur.com/OwmYcFA)
+![Imgur Image](https://imgur.com/OwmYcFA.gif)
 
 
 Pool System Generator Custom Editor Actions to generate Pool System Classes on Runtime
-![Imgur Image](https://imgur.com/Xrbqo1m)
+![Imgur Image](https://imgur.com/Xrbqo1m.gif)
 
 
 Quad Tree Implementation For Custom Collision Detection
-![Imgur Image](https://imgur.com/7Oelk0B)
+![Imgur Image](https://imgur.com/7Oelk0B.gif)
 
 
 Sword Slash Effect Run Time Generation of Mesh to create a more vivid Sword Slash Effect
-![Imgur Image](https://imgur.com/hpIMyRy)
+![Imgur Image](https://imgur.com/hpIMyRy.gif)
 
 
 VRConsole  In Game VR console to make the Debugging in VR Easier
-![Imgur Image](https://imgur.com/6Yq40z4)
+![Imgur Image](https://imgur.com/6Yq40z4.gif)
