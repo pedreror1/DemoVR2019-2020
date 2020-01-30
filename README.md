@@ -2,10 +2,10 @@
  Unity VR Sample  2019-2020
  
  Interactions:
- * Shoot Bats from your gun using the Index Trigger on your left Hand
- * Kill Incoming Ghosts with your sword on the Right Hand
- *Toggle the VR Console with the Right Hand A button
- *Clear the VR Console Messages with  the Right Hand B Button
+ * Shoot Bats from your gun using the Index Trigger on your left Hand<br/>
+ * Kill Incoming Ghosts with your sword on the Right Hand<br/>
+ *Toggle the VR Console with the Right Hand A button<br/>
+ *Clear the VR Console Messages with  the Right Hand B Button<br/>
 
  Descriptions<br/>
 
