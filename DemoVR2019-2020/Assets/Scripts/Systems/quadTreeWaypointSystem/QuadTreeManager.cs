@@ -11,9 +11,7 @@ using System;
         [Range(0.0001f,0.0510f)]
         public float FadeSpeed;
         //public Transform PlayerPawn;
-       
-       
-      
+
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.blue;
@@ -24,11 +22,7 @@ using System;
                 {
                     drawCollisions(pawn);
                 }
-
-
             }
-
-
         }
         void drawCollisions(SMPlayerPawn pawn)
         {
@@ -42,8 +36,6 @@ using System;
                 }
 
             }
-               
-
              
             foreach (Transform t in pawn.CollidingObjects)
             {
@@ -56,33 +48,31 @@ using System;
         public void addPawn(SMPlayerPawn pawn)
         {
             Pawns.Add(pawn);
-        }
+            for (int i = 0; i < Pawns.Count; i++)
+            {
+                Pawns[i].ID = i;
+            }
+    }
         public void removePawn(SMPlayerPawn pawn)
         {
             Pawns.Remove(pawn);
+            for (int i = 0; i < Pawns.Count; i++)
+            {
+                Pawns[i].ID = i;
+            }
         }
 
         public void UpdateCollision(int regionID, bool isOnShadow, int pawnID, List<Transform> collisions = null)
         {
-            Pawns[pawnID].UpdateCollision(regionID, isOnShadow, collisions);
-            
+            Pawns[pawnID].UpdateCollision(regionID, isOnShadow, collisions);            
         }
         private void Start()
         {
-            
             for (int i = 0; i < transform.childCount; i++)
             {
                 Regions.Add(transform.GetChild(i).GetComponent<QuadTreeRegion>());
                 Regions[i].id = i;
             }
-       //     Pawns = FindObjectsOfType<SMPlayerPawn>();
-           
-            for (int i = 0; i < Pawns.Count; i++)
-            {
-                
-                Pawns[i].ID = i;
-            }
-            
         }
         
     }

@@ -27,7 +27,7 @@ public class FlyingEnemieObject : MonoBehaviour, IPooledObject
         deadTime = 0f;
         speed = initialSpeed;
         mat = GetComponentInChildren<Renderer>().material;
-        target = FindObjectOfType<monavr>().transform;
+        target = FindObjectOfType<IKVRPlayer>().transform;
         if(!target)
         {
             Destroy(gameObject);

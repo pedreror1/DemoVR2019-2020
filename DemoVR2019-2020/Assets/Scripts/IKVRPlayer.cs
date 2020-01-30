@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class monavr : MonoBehaviour
+public class IKVRPlayer : MonoBehaviour
 {
     protected Animator animator;
 
@@ -10,6 +10,8 @@ public class monavr : MonoBehaviour
     public Transform lookObj;
     public Transform rightHandObj;
     public Transform leftHandObj;
+    public Transform startPosition;
+    public Vector3 startOffset = new Vector3(0, -1.361f, -.15f);
     private void OnAnimatorIK(int layerIndex)
     {
         if (animator)
@@ -49,12 +51,11 @@ public class monavr : MonoBehaviour
     void Start()
     {
             animator = GetComponent<Animator>();
-
-        }
-
+            transform.rotation = startPosition.rotation;
+    }
         // Update is called once per frame
-        void Update()
+    void Update()
     {
-        
+        transform.position = startPosition.position + startOffset;
     }
 }

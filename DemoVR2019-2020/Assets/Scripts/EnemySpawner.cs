@@ -48,6 +48,7 @@ public class EnemySpawner : MonoBehaviour
                 newEnemy.transform.parent= transform;
                 newEnemy.transform.position = transform.position;
                 newEnemy.gameObject.SetActive(true);
+                newEnemy.name = "Slime" + Time.time;
                 numEnemies--;
                 if(numEnemies>0)
                 {

@@ -17,6 +17,7 @@ public class swordWeapon : MonoBehaviour
         if(other.TryGetComponent<FlyingEnemieObject>(out collidingFlyingEnemy))
         {
             collidingFlyingEnemy.IsDead = true;
+            Debug.Log("Killed Ghost");
         }
     }
     // Update is called once per frame

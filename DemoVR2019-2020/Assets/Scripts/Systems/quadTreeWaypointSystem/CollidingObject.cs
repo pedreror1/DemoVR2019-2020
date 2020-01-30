@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShadeVolume : MonoBehaviour
+public class CollidingObject : MonoBehaviour
 {
     public float width = 1f;
     public float height = 1f;
@@ -16,9 +16,9 @@ public class ShadeVolume : MonoBehaviour
     public bool Intersects(Transform obj)
     {
         isIntersecting= (obj.position.x >= (transform.position.x - width/2) &&
-                  obj.position.x <= (transform.position.x + width / 2) &&
-                  obj.position.z >= (transform.position.z - height / 2) &&
-                  obj.position.z <= (transform.position.z + height / 2)) ;
+                         obj.position.x <= (transform.position.x + width / 2) &&
+                         obj.position.z >= (transform.position.z - height / 2) &&
+                         obj.position.z <= (transform.position.z + height / 2)) ;
 
         return isIntersecting;
     }

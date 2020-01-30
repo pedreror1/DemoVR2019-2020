@@ -9,17 +9,12 @@ public abstract class poolSystem<T>:SingletonComponent<poolSystem<T>> where T: C
     private T prefab;
 
     private Queue<T> objects = new Queue<T>();
-
-
-    
-
     public T getFromPool()
     {
         if(objects.Count==0)
         {
             AddObjects(1);
         }
-
         return objects.Dequeue();
     }
 
@@ -37,16 +32,5 @@ public abstract class poolSystem<T>:SingletonComponent<poolSystem<T>> where T: C
     {
         poolObject.gameObject.SetActive(false);
         objects.Enqueue(poolObject);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    }    
 }

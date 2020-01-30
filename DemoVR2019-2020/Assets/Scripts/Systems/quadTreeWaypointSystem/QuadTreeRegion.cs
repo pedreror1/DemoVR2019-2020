@@ -31,7 +31,8 @@ using UnityEngine;
         }
         public Transform getRandomChild()
         {
-            return transform.GetChild(Random.Range(0, transform.childCount - 1));
+
+            return transform.GetChild(Random.Range(0, 9999)% (transform.childCount));
         }
         void Start()
         {
@@ -53,9 +54,9 @@ using UnityEngine;
         {
             foreach (Transform t in ShadowVolumes)
             {
-                Vector3 newpos = ParentNode.position;
-                newpos.x += Random.Range(-ParentNode.width, ParentNode.width);
-                newpos.z += Random.Range(-ParentNode.height, ParentNode.height);
+                Vector3 newpos = ParentNode.Position;
+                newpos.x += Random.Range(-ParentNode.Width, ParentNode.Width);
+                newpos.z += Random.Range(-ParentNode.Height, ParentNode.Height);
                 t.position = newpos;
             }
         }
@@ -79,15 +80,15 @@ using UnityEngine;
         }        
         void drawAll(QuadTree q)
         {
-            for (int i = 0; i < q.nodes.Count; i++)
+            for (int i = 0; i < q.Nodes.Count; i++)
             {
-                if (q.nodes[i].nodes.Count > 0)
+                if (q.Nodes[i].Nodes.Count > 0)
                 {
-                    drawAll(q.nodes[i]);
+                    drawAll(q.Nodes[i]);
                 }
                 else
                 {
-                    draw(q.nodes[i]);
+                    draw(q.Nodes[i]);
                 }
             }
 
@@ -95,17 +96,11 @@ using UnityEngine;
         }
         void draw(QuadTree QT)
         {
-
             Gizmos.color = Color.red;
-
-            Gizmos.DrawLine(QT.position + new Vector3(-QT.width, 0, QT.height), QT.position + new Vector3(QT.width, 0, QT.height));
-            Gizmos.DrawLine(QT.position + new Vector3(-QT.width, 0, QT.height), QT.position + new Vector3(-QT.width, 0, -QT.height));
-            Gizmos.DrawLine(QT.position + new Vector3(-QT.width, 0, -QT.height), QT.position + new Vector3(QT.width, 0, -QT.height));
-            Gizmos.DrawLine(QT.position + new Vector3(QT.width, 0, QT.height), QT.position + new Vector3(QT.width, 0, -QT.height));
-
-             
-
-
+            Gizmos.DrawLine(QT.Position + new Vector3(-QT.Width, 0, QT.Height), QT.Position + new Vector3(QT.Width, 0, QT.Height));
+            Gizmos.DrawLine(QT.Position + new Vector3(-QT.Width, 0, QT.Height), QT.Position + new Vector3(-QT.Width, 0, -QT.Height));
+            Gizmos.DrawLine(QT.Position + new Vector3(-QT.Width, 0, -QT.Height), QT.Position + new Vector3(QT.Width, 0, -QT.Height));
+            Gizmos.DrawLine(QT.Position + new Vector3(QT.Width, 0, QT.Height), QT.Position + new Vector3(QT.Width, 0, -QT.Height));
         }       
         public int getPlayerInBounds(SMPlayerPawn Pawn)
         {
@@ -139,24 +134,24 @@ using UnityEngine;
                     ParentNode.Verify();
 
                     
-                        ParentNode.Retrieve(QuadTreeManager.Instance.Pawns[playerInBounds].NearObjects, QuadTreeManager.Instance.Pawns[playerInBounds].transform);
-                        if (QuadTreeManager.Instance.Pawns[playerInBounds].NearObjects.Contains(QuadTreeManager.Instance.Pawns[playerInBounds].transform))
-                        {
-                            QuadTreeManager.Instance.Pawns[playerInBounds].NearObjects.Remove(QuadTreeManager.Instance.Pawns[playerInBounds].transform);
-                        }
+                    ParentNode.Retrieve(QuadTreeManager.Instance.Pawns[playerInBounds].NearObjects, QuadTreeManager.Instance.Pawns[playerInBounds].transform);
+                    if (QuadTreeManager.Instance.Pawns[playerInBounds].NearObjects.Contains(QuadTreeManager.Instance.Pawns[playerInBounds].transform))
+                    {
+                        QuadTreeManager.Instance.Pawns[playerInBounds].NearObjects.Remove(QuadTreeManager.Instance.Pawns[playerInBounds].transform);
+                    }
 
-                        if (QuadTreeManager.Instance.Pawns[playerInBounds].NearObjects.Count > 0)
-                        {
-                            QuadTreeManager.Instance.Pawns[playerInBounds].CollidingObjects = ParentNode.checkCollisions(QuadTreeManager.Instance.Pawns[playerInBounds].NearObjects, QuadTreeManager.Instance.Pawns[playerInBounds].transform);
-                            if (QuadTreeManager.Instance.Pawns[playerInBounds].CollidingObjects.Count > 0)
-                            { 
-                                QuadTreeManager.Instance.UpdateCollision(id, true, QuadTreeManager.Instance.Pawns[playerInBounds].ID, QuadTreeManager.Instance.Pawns[playerInBounds].CollidingObjects);
-                            }
-                            else
-                            {
-                                QuadTreeManager.Instance.UpdateCollision(id, false, QuadTreeManager.Instance.Pawns[playerInBounds].ID);
-                            }
+                    if (QuadTreeManager.Instance.Pawns[playerInBounds].NearObjects.Count > 0)
+                    {
+                        QuadTreeManager.Instance.Pawns[playerInBounds].CollidingObjects = ParentNode.checkCollisions(QuadTreeManager.Instance.Pawns[playerInBounds].NearObjects, QuadTreeManager.Instance.Pawns[playerInBounds].transform);
+                        if (QuadTreeManager.Instance.Pawns[playerInBounds].CollidingObjects.Count > 0)
+                        { 
+                            QuadTreeManager.Instance.UpdateCollision(id, true, QuadTreeManager.Instance.Pawns[playerInBounds].ID, QuadTreeManager.Instance.Pawns[playerInBounds].CollidingObjects);
                         }
+                        else
+                        {
+                            QuadTreeManager.Instance.UpdateCollision(id, false, QuadTreeManager.Instance.Pawns[playerInBounds].ID);
+                        }
+                    }
                     
                 }
             }

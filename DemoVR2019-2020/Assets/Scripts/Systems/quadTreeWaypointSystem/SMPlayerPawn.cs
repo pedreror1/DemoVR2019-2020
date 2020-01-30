@@ -7,13 +7,13 @@ using Random = UnityEngine.Random;
 [Serializable]
     public class SMPlayerPawn:MonoBehaviour
     {
-        public Transform target;
-        public float speed = 0.2f;
+        public Transform Target;
+        public float Speed = 0.2f;
 
-         [HideInInspector] public List<Transform> CollidingObjects= new List<Transform>();
+        [HideInInspector] public List<Transform> CollidingObjects= new List<Transform>();
         [HideInInspector] public List<Transform> NearObjects = new List<Transform>();
-         [HideInInspector] public int ID;
-         private bool isInside;
+        [HideInInspector] public int ID;
+        private bool isInside;
         [HideInInspector] public int RegionID = 0;
 
 
@@ -21,61 +21,48 @@ using Random = UnityEngine.Random;
     {
         QuadTreeManager.Instance.addPawn(this);
     }
-    private void OnDisable()
-    {
-       
-    }
-
-
+    
     private void Start()
+    {
+        Speed = Random.Range(0.01f, 0.14f);
+        if (isInside)
         {
-            speed = Random.Range(0.01f, 0.14f);
-            if (isInside)
-                target=  QuadTreeManager.Instance.Regions[RegionID].getRandomChild();
+            Target = QuadTreeManager.Instance.Regions[RegionID].getRandomChild();
         }
+    }
         public void UpdateCollision(int ID, bool isOnShadow, List<Transform> collisions = null)
         {
+
             if (isOnShadow && collisions!=null &&  collisions.Count>0)
             {
                 isInside = true;
                 RegionID = ID;
-            if (isInside && collisions.Contains(target))
-            {
-                target = QuadTreeManager.Instance.Regions[RegionID].getRandomChild();
-                speed = Random.Range(0.01f, 0.34f);
-            }
+
+                if (isInside && collisions.Contains(Target))
+                {
+                    Target = QuadTreeManager.Instance.Regions[RegionID].getRandomChild();
+                    Speed = Random.Range(0.01f, 0.34f);
+                }
             }
             else
-            {
-               
-                if (RegionID == ID)
-                {
-                     
-                }
-                else
-                {
-                    if (QuadTreeManager.Instance.Regions[RegionID].getPlayerInBounds(this) == -1)
-                    {
-                        RegionID = ID;
-                        
-                    }
+            {               
+                if (RegionID != ID && QuadTreeManager.Instance.Regions[RegionID].getPlayerInBounds(this) == -1)
+                {                
+                    RegionID = ID;                    
                 }
             }
         }
 
         private void Update()
         {
-
-
-            if (target)
+            if (Target)
             {
-                transform.LookAtY(transform.position, target.position);
-                transform.position += transform.forward * speed;
+                transform.LookAtY(transform.position, Target.position);
+                transform.position += transform.forward * Speed;
             }
             else
-            {
-                  
-                    target = QuadTreeManager.Instance.Regions[RegionID].getRandomChild();
+            {                  
+                Target = QuadTreeManager.Instance.Regions[RegionID].getRandomChild();
             }
         }
 

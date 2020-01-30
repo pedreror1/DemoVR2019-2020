@@ -528,8 +528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053879d832c4e3a49b588771722a7219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 0.01
+  Target: {fileID: 0}
+  Speed: 0.2
   CollidingObjects: []
   NearObjects: []
   ID: 0
@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683936e3947ff754f94744f432526024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeSpan: 5
+  lifeSpan: 10
   timeAlive: 0
   speed: 0.2
 --- !u!1 &8415287464318106020
