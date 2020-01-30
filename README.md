@@ -12,15 +12,15 @@ Sample Project With some Interesting Demos for VR using UNITY HDRP
 
 
 
-Mesh Vertex Displacment Shader to give Animation to an static mesh
-<img src="/Gifs/iksmall.gif?raw=true" width="200px">
+Mesh Vertex Displacment Shader to give Animation to an static mesh (Bat Flying Animation)
+<img src="/Gifs/batshaderSmall.gif?raw=true" width="200px">
 
 
 Scanlines and Distort Shader Using Vertex Displacment
 ![Imgur Image](https://imgur.com/7Oelk0B.gif)
 
-Inverse Kinematics System to control a Virtual Character with full body Interactions
-![Imgur Image](https://i.imgur.com/vDsiuE2.gifv)
+Inverse Kinematics System to control a Virtual Character with full body Interactions(Hands and Head Tracking)
+<img src="/Gifs/IKsmall.gif?raw=true" width="200px">
 
 
 Pool System Generator Custom Editor Actions to generate Pool System Classes on Runtime
