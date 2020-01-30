@@ -13,7 +13,7 @@ Sample Project With some Interesting Demos for VR using UNITY HDRP
 
 
 Mesh Vertex Displacment Shader to give Animation to an static mesh
-![Imgur Image](https://i.imgur.com/0ocs3pS.gif)
+<img src="/Gifs/iksmall.gif?raw=true" width="200px">
 
 
 Scanlines and Distort Shader Using Vertex Displacment
@@ -32,8 +32,8 @@ Quad Tree Implementation For Custom Collision Detection
 
 
 Sword Slash Effect Run Time Generation of Mesh to create a more vivid Sword Slash Effect
-![Imgur Image](https://imgur.com/bdmw2Ww.gif)
+<img src="/Gifs/swordslashsmall.gif?raw=true" width="200px">
 
 
 VRConsole  In Game VR console to make the Debugging in VR Easier
-![Imgur Image](https://i.imgur.com/D0uCFUL.gif)
+<img src="/Gifs/vrconsole.gif?raw=true" width="200px">
